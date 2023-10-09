@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">clique aq</button>
+
+    <script>
+        const sandwich ={
+            bread : 'frances',
+            cheese: 'coalho',
+
+            prepare: function(){
+                return `I want a sandwich ${this.bread} bread and ${this.cheese} cheese `
+            },
+
+            make: function(){
+                var self = this;
+                window.setTimeout(function(){
+                    // pra acessar o this atual com function notrmal,acesse dessa forma;
+                    console.log(self.prepare())
+                    // console.log(self.prepare());
+                }, 500)
+            }
+            //arrow function acessa o objeto this em relação ao contexto global;
+            // caso não esteja utilizando arrow functions, eh necessário criar um self = this para acessar o método da atual classe 
+            // como nesse caso que temos funções dentro de funções o this na arrow function vai ser referenciado ao objeto anterior, no caso, sandwich
+        };
+        const btn = document.getElementById('btn')
+        btn.addEventListener('click', function() {sandwich.make()})
+    </script>
+</body>
+</html>

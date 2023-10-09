@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>hello</li>
+        <li>world</li>
+    </ul>
+
+    <script>
+        // const text = 'ronaldo' => console.log(Array.from(text)) | virou array
+
+        //NodeList
+        const list = document.querySelectorAll("#list li");
+        const listArray = Array.from(list);
+       //listArrayagora é um array 
+        console.log(listArray.map((name) => name.textContent)[0])
+
+        // array qualquer
+        const array = Array.of(1,3,4, 'hello world', {})
+    </script>
+</body>
+</html>

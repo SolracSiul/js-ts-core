@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .green{
+        color: green;
+        font-size: 16px;
+    }
+</style>
+<body>
+    
+    <script>
+        const city = 'Hello';
+        const something = 'World';
+        const otherThing = 'Lorem';
+        function green(template, ...values){
+           return template.reduce((acc, part, i) =>{
+            return `
+                ${acc}
+                ${part}
+                ${i}
+                <span class="green">${values[i -1].toUpperCase()}</span>
+            `
+           })
+        }
+        // boa isso serve pra substituir os valores por qualquer outra coisa
+        //em values passe o texto que deseja ser substituido
+        const srk = green`teste ${city} mundo: ${something} stuff:${otherThing}`;
+
+        document.body.innerHTML = srk;
+    </script>
+</body>
+</html>

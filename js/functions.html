@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>funções</h1>
+    <script>
+        const cidades = ['Campina', 'Areia', 'Cuité']
+
+        const love = cidades.map((x) =>{
+            return `i love ${x}`
+        })
+        const loveArrowSingle = cidades.map(x =>{ return `i love ${x}`});
+
+        const loveSingleLine = cidades.map(cidade => `eu gosto de ${cidade}`)
+
+        const loveAreia = cidades.filter(name => name === 'Areia').map(name => `Filhos de ${name}`)
+        console.log(loveAreia)
+    </script>
+</body>
+</html>

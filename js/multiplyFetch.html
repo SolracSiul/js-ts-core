@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>multiply promises</h1>
+
+    <script>
+        const currency = new Promise((resolve, reject)=>{
+            setTimeout(() =>{
+                resolve('posso passar qualquer coisa??');
+            }, 20000);
+        });
+
+        const cidades = new Promise((resolve, reject) =>{
+            setTimeout(() =>{
+                resolve(['queimadas', 'cg', 'areia']);
+            },10);
+        });
+        const objeto = new Promise((resolve, reject) =>{
+            setTimeout(() =>{
+                resolve({name: 'luis', age: 22, city: 'queimadas'})
+            })
+        })
+        //a promiseAll pode receber qualquer coisa, desde que, esteja dentro de um array[];
+        Promise
+            .all([currency, cidades, objeto])
+            .then((responses) =>{
+                console.log(responses)
+            });
+        //Promise race vai executar quem responder mais rápido;
+        Promise
+            .race([currency, cidades,objeto])
+            .then(responses => console.log(responses))
+    </script>
+
+</body>
+</html>

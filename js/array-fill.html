@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data = {
+            name: 'Ronaldo',
+            time: 'Real madrid',
+            social: {
+                twitter: '@tt',
+                insta: '@insta'
+            }
+        }
+        const arr = new Array(5)
+        arr.fill('ronaldo');
+        console.log(arr);
+        const newArray = ['Srk', 12, 'Campina', true];
+        const [namNew, age, city, status] = newArray;
+        console.log('new array: ', newArray)
+        console.log(`destruct new array: ${namNew} ${age} ${city} ${status}`)
+        const {name, time} = data;
+        console.log(`o jogador ${name} joga em: ${time}`);
+        const {twitter, insta} = data.social;
+        console.log(`twitter do jogador ${twitter} insta: ${insta}`);
+
+        // swap de variavel:
+        let a = 42;
+        let b = 21;
+        console.log("a: ", a);
+        console.log("b: ", b);
+        [a, b] = [b, a];
+        console.log("a: ", a)
+        console.log("b: ", b)
+    </script>
+</body>
+</html>

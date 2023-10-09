@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>find-findINdex</h1>
+
+    <script>
+        const data =[
+        {
+            name: 'srk',
+            age: 1,
+            city: 'gotham'
+        },
+        {
+            name: 'siul',
+            age: 2,
+            city: 'sand'
+        }        
+        ];
+        const sampleArray =[4,-5,0,-1];
+        const underZero = sampleArray.find( x=> x<0);
+        const underZeroIndex = sampleArray.findIndex(x => x < 0)
+        console.log('primeiro index de onde achei o numero:  '+underZeroIndex)
+        console.log('retorna o primeiro valor menor que 0: ' +underZero)
+
+        const srk = data.find(person => person.name === 'srk')
+        const srkIndex = data.findIndex(person => person.name === 'srk')
+        console.log('procurando srk: ', srk)
+        console.log('qual o primeiro index que supre:' , srkIndex)
+    </script>
+</body>
+</html>

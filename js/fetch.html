@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var posts = fetch('https://dogapi.dog/api/v2/breeds');
+
+        //pending
+        //resolved
+        // rejected
+        posts
+            .then(data => data.json())
+            // .then(data => {
+            //     throw new Error('forcei um erro')
+            // })
+            .then(data =>{
+                items = data.data;
+                console.log(items)
+                items.map((item) =>{
+                    console.log(item.attributes.name);
+                })
+            })
+            .catch(err => console.error(err));
+            
+    </script>
+</body>
+</html>
